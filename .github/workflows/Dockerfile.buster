@@ -2,7 +2,7 @@ FROM debian:buster
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends apt-utils ca-certificates gnupg wget lsb-release && \
+    apt-get install -y --no-install-recommends git apt-utils ca-certificates gnupg wget lsb-release && \
     echo "deb https://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list && \ 
     wget -qO /etc/apt/trusted.gpg.d/vkpartner.asc https://artifactory-external.vkpartner.ru/artifactory/api/gpg/key/public && \
     echo "deb https://artifactory-external.vkpartner.ru/artifactory/kphp buster main" >> /etc/apt/sources.list && \
@@ -19,11 +19,15 @@ RUN apt-get update && \
       git cmake-data=3.18* cmake=3.18* make g++ gperf netcat \
       python3-minimal python3-dev libpython3-dev python3-jsonschema python3-setuptools python3-pip && \
     pip3 install wheel && \
-    apt-get install -y --no-install-recommends curl-kphp-vk kphp-timelib libuber-h3-dev libfmt-dev libgtest-dev libgmock-dev libre2-dev libpcre3-dev \
+    apt-get install -y --no-install-recommends curl-kphp-vk kphp-timelib php7.4-bcmath php7.4-mbstring php7.4-curl php7.4-zstd libuber-h3-dev libfmt-dev libgtest-dev libgmock-dev libre2-dev libpcre3-dev \
       libzstd-dev libyaml-cpp-dev libnghttp2-dev zlib1g-dev php7.4-dev mysql-server libmysqlclient-dev libldap-dev libkrb5-dev \
       postgresql postgresql-server-dev-all libnuma-dev composer && \
     pip3 install portalocker psutil requests-toolbelt pytest pytest-xdist pytest-mysql pytest-postgresql psycopg zstandard && \
     rm -rf /var/lib/apt/lists/* && \
     update-alternatives --set php /usr/bin/php7.4
+
+RUN git clone https://github.com/uber/h3.git && cd h3 && git checkout v3.7.1 && cmake -DBUILD_SHARED_LIBS=ON . && make -j$(nproc) && make -j$(nproc) install && cd .. && \
+    cp /usr/local/lib/libh3.* /usr/lib/ && ldconfig && \
+    git clone https://github.com/neatlife/php-h3.git && cd php-h3 && phpize && ./configure && make -j$(nproc) && make -j$(nproc) install && cd ..
 
 RUN useradd -ms /bin/bash kitten
