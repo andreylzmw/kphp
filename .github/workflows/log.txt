@@ -1,689 +1,0 @@
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] 🚀  Start image=catthehacker/ubuntu:act-latest
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] 🚀  Start image=catthehacker/ubuntu:act-latest
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] 🚀  Start image=catthehacker/ubuntu:act-latest
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] 🚀  Start image=catthehacker/ubuntu:act-latest
-[build/macos/clang++/c++17                         ] 🚧  Skipping unsupported platform -- Try running with `-P macos-12=...`
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker pull image=catthehacker/ubuntu:act-latest platform= username= forcePull=true
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker create image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker run image=catthehacker/ubuntu:act-latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ☁  git clone 'https://github.com/actions/checkout' # ref=v3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v3
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ☁  git clone 'https://github.com/actions/checkout' # ref=v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ☁  git clone 'https://github.com/actions/cache' # ref=v3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ☁  git clone 'https://github.com/actions/cache' # ref=v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ☁  git clone 'https://github.com/actions/cache' # ref=v3
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ☁  git clone 'https://github.com/actions/cache' # ref=v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ☁  git clone 'https://github.com/actions/upload-artifact' # ref=v3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ☁  git clone 'https://github.com/actions/upload-artifact' # ref=v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ☁  git clone 'https://github.com/actions/upload-artifact' # ref=v3
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ☁  git clone 'https://github.com/actions/upload-artifact' # ref=v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] 🧪  Matrix: map[asan:off compiler:clang++ cpp:17 os:focalclang ubsan:on]
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] ⭐ Run Main actions/checkout@v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker cp src=/home/andreylzmw/kphp/.github/workflows/. dst=/home/andreylzmw/kphp/.github/workflows
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ✅  Success - Main actions/checkout@v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] ⭐ Run Main Get polyfills repo
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-checkout@v3/ dst=/var/run/act/actions/actions-checkout@v3/
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::GITHUB_WORKSPACE = '/home/andreylzmw/kphp/.github/workflows'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::qualified repository = 'VKCOM/kphp-polyfills'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::ref = ''
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::commit = 'undefined'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::clean = true
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::fetch depth = 1
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::lfs = false
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::submodules = false
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::recursive submodules = false
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Repository owner ID not found within GITHUB event info
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::GitHub Host URL = 
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓ add-matcher /run/act/actions/actions-checkout@v3/dist/problem-matcher.json
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Syncing repository: VKCOM/kphp-polyfills
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Getting Git version info
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Working directory is '/home/andreylzmw/kphp/.github/workflows/kphp-polyfills'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Getting git version
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git version
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | git version 2.40.0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::git version 2.40.0%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ⚙  ***
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Temporarily overriding HOME='/tmp/26528f02-4fe3-4f27-b537-dad9f9b39515' before making global git config changes
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Adding repository directory to the temporary git global config as a safe directory
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Initializing the repository
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git init /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: Using 'master' as the name for the initial branch. This default branch name
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: is subject to change. To configure the initial branch name to use in all
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: of your new repositories, which will suppress this warning, call:
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 	git config --global init.defaultBranch <name>
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 'development'. The just-created branch can be renamed via this command:
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | hint: 	git branch -m <name>
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git remote add origin https://github.com/VKCOM/kphp-polyfills
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Disabling automatic garbage collection
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local gc.auto 0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Setting up auth
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::1
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::1
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Determining the default branch
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Retrieving the default branch name
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] 🧪  Matrix: map[asan:on compiler:g++ cpp:20 os:jammy ubsan:off]
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] ⭐ Run Main actions/checkout@v3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker cp src=/home/andreylzmw/kphp/.github/workflows/. dst=/home/andreylzmw/kphp/.github/workflows
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ✅  Success - Main actions/checkout@v3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] ⭐ Run Main Get polyfills repo
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-checkout@v3/ dst=/var/run/act/actions/actions-checkout@v3/
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Default branch 'master'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Fetching the repository
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::GITHUB_WORKSPACE = '/home/andreylzmw/kphp/.github/workflows'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::qualified repository = 'VKCOM/kphp-polyfills'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::ref = ''
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::commit = 'undefined'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::clean = true
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::fetch depth = 1
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::lfs = false
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::submodules = false
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::recursive submodules = false
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Repository owner ID not found within GITHUB event info
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::GitHub Host URL = 
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓ add-matcher /run/act/actions/actions-checkout@v3/dist/problem-matcher.json
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Syncing repository: VKCOM/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Getting Git version info
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Working directory is '/home/andreylzmw/kphp/.github/workflows/kphp-polyfills'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Getting git version
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git version
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | git version 2.40.0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::git version 2.40.0%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ⚙  ***
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Temporarily overriding HOME='/tmp/e01bb0fa-1b55-4f45-a59f-ed6db2a94a67' before making global git config changes
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Initializing the repository
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git init /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: Using 'master' as the name for the initial branch. This default branch name
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: is subject to change. To configure the initial branch name to use in all
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: of your new repositories, which will suppress this warning, call:
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 	git config --global init.defaultBranch <name>
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 'development'. The just-created branch can be renamed via this command:
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | hint: 	git branch -m <name>
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git remote add origin https://github.com/VKCOM/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Disabling automatic garbage collection
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local gc.auto 0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Setting up auth
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::1
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::1
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Determining the default branch
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Retrieving the default branch name
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] 🧪  Matrix: map[asan:off compiler:g++ cpp:17 os:buster ubsan:off]
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] ⭐ Run Main actions/checkout@v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker cp src=/home/andreylzmw/kphp/.github/workflows/. dst=/home/andreylzmw/kphp/.github/workflows
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ✅  Success - Main actions/checkout@v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] ⭐ Run Main Get polyfills repo
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-checkout@v3/ dst=/var/run/act/actions/actions-checkout@v3/
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Default branch 'master'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Fetching the repository
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::GITHUB_WORKSPACE = '/home/andreylzmw/kphp/.github/workflows'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::qualified repository = 'VKCOM/kphp-polyfills'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::ref = ''
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::commit = 'undefined'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::clean = true
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::fetch depth = 1
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::lfs = false
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::submodules = false
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::recursive submodules = false
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Repository owner ID not found within GITHUB event info
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::GitHub Host URL = 
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓ add-matcher /run/act/actions/actions-checkout@v3/dist/problem-matcher.json
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Syncing repository: VKCOM/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Getting Git version info
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Working directory is '/home/andreylzmw/kphp/.github/workflows/kphp-polyfills'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Getting git version
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git version
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | git version 2.40.0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::git version 2.40.0%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ⚙  ***
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Temporarily overriding HOME='/tmp/2cc83667-5d88-4ab3-93b7-0406d99f2132' before making global git config changes
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Initializing the repository
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git init /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: Using 'master' as the name for the initial branch. This default branch name
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: is subject to change. To configure the initial branch name to use in all
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: of your new repositories, which will suppress this warning, call:
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 	git config --global init.defaultBranch <name>
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 'development'. The just-created branch can be renamed via this command:
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | hint: 	git branch -m <name>
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git remote add origin https://github.com/VKCOM/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Disabling automatic garbage collection
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local gc.auto 0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Setting up auth
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::1
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] 🧪  Matrix: map[asan:on compiler:g++-10 cpp:20 os:focalg ubsan:off]
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::1
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] ⭐ Run Main actions/checkout@v3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Determining the default branch
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Retrieving the default branch name
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker cp src=/home/andreylzmw/kphp/.github/workflows/. dst=/home/andreylzmw/kphp/.github/workflows
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ✅  Success - Main actions/checkout@v3
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | remote: Enumerating objects: 42, done.        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | remote: Counting objects:   2% (1/42)        remote: Counting objects:   4% (2/42)        remote: Counting objects:   7% (3/42)        remote: Counting objects:   9% (4/42)        remote: Counting objects:  11% (5/42)        remote: Counting objects:  14% (6/42)        remote: Counting objects:  16% (7/42)        remote: Counting objects:  19% (8/42)        remote: Counting objects:  21% (9/42)        remote: Counting objects:  23% (10/42)        remote: Counting objects:  26% (11/42)        remote: Counting objects:  28% (12/42)        remote: Counting objects:  30% (13/42)        remote: Counting objects:  33% (14/42)        remote: Counting objects:  35% (15/42)        remote: Counting objects:  38% (16/42)        remote: Counting objects:  40% (17/42)        remote: Counting objects:  42% (18/42)        remote: Counting objects:  45% (19/42)        remote: Counting objects:  47% (20/42)        remote: Counting objects:  50% (21/42)        remote: Counting objects:  52% (22/42)        remote: Counting objects:  54% (23/42)        remote: Counting objects:  57% (24/42)        remote: Counting objects:  59% (25/42)        remote: Counting objects:  61% (26/42)        remote: Counting objects:  64% (27/42)        remote: Counting objects:  66% (28/42)        remote: Counting objects:  69% (29/42)        remote: Counting objects:  71% (30/42)        remote: Counting objects:  73% (31/42)        remote: Counting objects:  76% (32/42)        remote: Counting objects:  78% (33/42)        remote: Counting objects:  80% (34/42)        remote: Counting objects:  83% (35/42)        remote: Counting objects:  85% (36/42)        remote: Counting objects:  88% (37/42)        remote: Counting objects:  90% (38/42)        remote: Counting objects:  92% (39/42)        remote: Counting objects:  95% (40/42)        remote: Counting objects:  97% (41/42)        remote: Counting objects: 100% (42/42)        remote: Counting objects: 100% (42/42), done.        
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] ⭐ Run Main Get polyfills repo
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | remote: Compressing objects:   2% (1/41)        remote: Compressing objects:   4% (2/41)        remote: Compressing objects:   7% (3/41)        remote: Compressing objects:   9% (4/41)        remote: Compressing objects:  12% (5/41)        remote: Compressing objects:  14% (6/41)        remote: Compressing objects:  17% (7/41)        remote: Compressing objects:  19% (8/41)        remote: Compressing objects:  21% (9/41)        remote: Compressing objects:  24% (10/41)        remote: Compressing objects:  26% (11/41)        remote: Compressing objects:  29% (12/41)        remote: Compressing objects:  31% (13/41)        remote: Compressing objects:  34% (14/41)        remote: Compressing objects:  36% (15/41)        remote: Compressing objects:  39% (16/41)        remote: Compressing objects:  41% (17/41)        remote: Compressing objects:  43% (18/41)        remote: Compressing objects:  46% (19/41)        remote: Compressing objects:  48% (20/41)        remote: Compressing objects:  51% (21/41)        remote: Compressing objects:  53% (22/41)        remote: Compressing objects:  56% (23/41)        remote: Compressing objects:  58% (24/41)        remote: Compressing objects:  60% (25/41)        remote: Compressing objects:  63% (26/41)        remote: Compressing objects:  65% (27/41)        remote: Compressing objects:  68% (28/41)        remote: Compressing objects:  70% (29/41)        remote: Compressing objects:  73% (30/41)        remote: Compressing objects:  75% (31/41)        remote: Compressing objects:  78% (32/41)        remote: Compressing objects:  80% (33/41)        remote: Compressing objects:  82% (34/41)        remote: Compressing objects:  85% (35/41)        remote: Compressing objects:  87% (36/41)        remote: Compressing objects:  90% (37/41)        remote: Compressing objects:  92% (38/41)        remote: Compressing objects:  95% (39/41)        remote: Compressing objects:  97% (40/41)        remote: Compressing objects: 100% (41/41)        remote: Compressing objects: 100% (41/41), done.        
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-checkout@v3/ dst=/var/run/act/actions/actions-checkout@v3/
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | remote: Total 42 (delta 4), reused 6 (delta 0), pack-reused 0        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | From https://github.com/VKCOM/kphp-polyfills
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   |  * [new branch]      master     -> origin/master
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Determining the checkout info
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::group::Checking out the ref
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Reset branch 'master'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | branch 'master' set up to track 'origin/master'.
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::branch 'master' set up to track 'origin/master'.%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::endgroup::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::commit 027c9ea9e1d743426a3e861855b746a71995c8d6%0AAuthor: Danil Ovchinnikov <danil42worker@gmail.com>%0ADate:   Mon Apr 24 14:28:41 2023 +0300%0A%0A    add polyfill for set_detect_incorrect_encoding_names_warning (#64)%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git log -1 --format='%H'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | '027c9ea9e1d743426a3e861855b746a71995c8d6'
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::'027c9ea9e1d743426a3e861855b746a71995c8d6'%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Unsetting HOME override
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❓  ::remove-matcher owner=checkout-git::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ✅  Success - Main Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::GITHUB_WORKSPACE = '/home/andreylzmw/kphp/.github/workflows'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::qualified repository = 'VKCOM/kphp-polyfills'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::ref = ''
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::commit = 'undefined'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::clean = true
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::fetch depth = 1
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::lfs = false
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::submodules = false
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::recursive submodules = false
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Repository owner ID not found within GITHUB event info
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::GitHub Host URL = 
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓ add-matcher /run/act/actions/actions-checkout@v3/dist/problem-matcher.json
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Syncing repository: VKCOM/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Getting Git version info
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Working directory is '/home/andreylzmw/kphp/.github/workflows/kphp-polyfills'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Getting git version
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git version
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | git version 2.40.0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Default branch 'master'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Fetching the repository
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::git version 2.40.0%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ⚙  ***
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Temporarily overriding HOME='/tmp/86241cc5-e3f2-4cb7-8738-90237430f84f' before making global git config changes
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Initializing the repository
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git init /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: Using 'master' as the name for the initial branch. This default branch name
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: is subject to change. To configure the initial branch name to use in all
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: of your new repositories, which will suppress this warning, call:
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 	git config --global init.defaultBranch <name>
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 'development'. The just-created branch can be renamed via this command:
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | hint: 	git branch -m <name>
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Initialized empty Git repository in /home/andreylzmw/kphp/.github/workflows/kphp-polyfills/.git/%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git remote add origin https://github.com/VKCOM/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Disabling automatic garbage collection
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local gc.auto 0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] ⭐ Run Main Cache docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Setting up auth
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::1
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::1
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Determining the default branch
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Retrieving the default branch name
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | remote: Enumerating objects: 42, done.        
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | remote: Counting objects:   2% (1/42)        remote: Counting objects:   4% (2/42)        remote: Counting objects:   7% (3/42)        remote: Counting objects:   9% (4/42)        remote: Counting objects:  11% (5/42)        remote: Counting objects:  14% (6/42)        remote: Counting objects:  16% (7/42)        remote: Counting objects:  19% (8/42)        remote: Counting objects:  21% (9/42)        remote: Counting objects:  23% (10/42)        remote: Counting objects:  26% (11/42)        remote: Counting objects:  28% (12/42)        remote: Counting objects:  30% (13/42)        remote: Counting objects:  33% (14/42)        remote: Counting objects:  35% (15/42)        remote: Counting objects:  38% (16/42)        remote: Counting objects:  40% (17/42)        remote: Counting objects:  42% (18/42)        remote: Counting objects:  45% (19/42)        remote: Counting objects:  47% (20/42)        remote: Counting objects:  50% (21/42)        remote: Counting objects:  52% (22/42)        remote: Counting objects:  54% (23/42)        remote: Counting objects:  57% (24/42)        remote: Counting objects:  59% (25/42)        remote: Counting objects:  61% (26/42)        remote: Counting objects:  64% (27/42)        remote: Counting objects:  66% (28/42)        remote: Counting objects:  69% (29/42)        remote: Counting objects:  71% (30/42)        remote: Counting objects:  73% (31/42)        remote: Counting objects:  76% (32/42)        remote: Counting objects:  78% (33/42)        remote: Counting objects:  80% (34/42)        remote: Counting objects:  83% (35/42)        remote: Counting objects:  85% (36/42)        remote: Counting objects:  88% (37/42)        remote: Counting objects:  90% (38/42)        remote: Counting objects:  92% (39/42)        remote: Counting objects:  95% (40/42)        remote: Counting objects:  97% (41/42)        remote: Counting objects: 100% (42/42)        remote: Counting objects: 100% (42/42), done.        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | remote: Compressing objects:   2% (1/41)        remote: Compressing objects:   4% (2/41)        remote: Compressing objects:   7% (3/41)        remote: Compressing objects:   9% (4/41)        remote: Compressing objects:  12% (5/41)        remote: Compressing objects:  14% (6/41)        remote: Compressing objects:  17% (7/41)        remote: Compressing objects:  19% (8/41)        remote: Compressing objects:  21% (9/41)        remote: Compressing objects:  24% (10/41)        remote: Compressing objects:  26% (11/41)        remote: Compressing objects:  29% (12/41)        remote: Compressing objects:  31% (13/41)        remote: Compressing objects:  34% (14/41)        remote: Compressing objects:  36% (15/41)        remote: Compressing objects:  39% (16/41)        remote: Compressing objects:  41% (17/41)        remote: Compressing objects:  43% (18/41)        remote: Compressing objects:  46% (19/41)        remote: Compressing objects:  48% (20/41)        remote: Compressing objects:  51% (21/41)        remote: Compressing objects:  53% (22/41)        remote: Compressing objects:  56% (23/41)        remote: Compressing objects:  58% (24/41)        remote: Compressing objects:  60% (25/41)        remote: Compressing objects:  63% (26/41)        remote: Compressing objects:  65% (27/41)        remote: Compressing objects:  68% (28/41)        remote: Compressing objects:  70% (29/41)        remote: Compressing objects:  73% (30/41)        remote: Compressing objects:  75% (31/41)        remote: Compressing objects:  78% (32/41)        remote: Compressing objects:  80% (33/41)        remote: Compressing objects:  82% (34/41)        remote: Compressing objects:  85% (35/41)        remote: Compressing objects:  87% (36/41)        remote: Compressing objects:  90% (37/41)        remote: Compressing objects:  92% (38/41)        remote: Compressing objects:  95% (39/41)        remote: Compressing objects:  97% (40/41)        remote: Compressing objects: 100% (41/41)        remote: Compressing objects: 100% (41/41), done.        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ✅  Success - Main Cache docker image
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | remote: Total 42 (delta 4), reused 6 (delta 0), pack-reused 0        
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | From https://github.com/VKCOM/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   |  * [new branch]      master     -> origin/master
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Determining the checkout info
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::group::Checking out the ref
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Reset branch 'master'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | branch 'master' set up to track 'origin/master'.
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::branch 'master' set up to track 'origin/master'.%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::endgroup::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::commit 027c9ea9e1d743426a3e861855b746a71995c8d6%0AAuthor: Danil Ovchinnikov <danil42worker@gmail.com>%0ADate:   Mon Apr 24 14:28:41 2023 +0300%0A%0A    add polyfill for set_detect_incorrect_encoding_names_warning (#64)%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git log -1 --format='%H'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | '027c9ea9e1d743426a3e861855b746a71995c8d6'
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::'027c9ea9e1d743426a3e861855b746a71995c8d6'%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Unsetting HOME override
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❓  ::remove-matcher owner=checkout-git::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ⚙  ::set-output:: cache-hit=false
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ✅  Success - Main Get polyfills repo
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] ⭐ Run Main Build and save docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Default branch 'master'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Fetching the repository
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] ⭐ Run Main Cache docker image
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #2 [internal] load build definition from Dockerfile.focalclang
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #2 sha256:2ac43b0597716e5d137709b1e2c7fe34cdd41eff59abe4e91cf66ef850d81bf7
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #2 transferring dockerfile: 94B done
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #2 ERROR: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | 
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #1 [internal] load .dockerignore
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #1 sha256:10dd18448509a14f959caad4a05f9cc39fccf96ca52b15bfabaad4cfb640e149
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #1 transferring context:
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | #1 CANCELED
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | ------
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   |  > [internal] load build definition from Dockerfile.focalclang:
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | ------
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | failed to read dockerfile: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ❌  Failure - Main Build and save docker image
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] exitcode '1': failure
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | remote: Enumerating objects: 42, done.        
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | remote: Counting objects:   2% (1/42)        remote: Counting objects:   4% (2/42)        remote: Counting objects:   7% (3/42)        remote: Counting objects:   9% (4/42)        remote: Counting objects:  11% (5/42)        remote: Counting objects:  14% (6/42)        remote: Counting objects:  16% (7/42)        remote: Counting objects:  19% (8/42)        remote: Counting objects:  21% (9/42)        remote: Counting objects:  23% (10/42)        remote: Counting objects:  26% (11/42)        remote: Counting objects:  28% (12/42)        remote: Counting objects:  30% (13/42)        remote: Counting objects:  33% (14/42)        remote: Counting objects:  35% (15/42)        remote: Counting objects:  38% (16/42)        remote: Counting objects:  40% (17/42)        remote: Counting objects:  42% (18/42)        remote: Counting objects:  45% (19/42)        remote: Counting objects:  47% (20/42)        remote: Counting objects:  50% (21/42)        remote: Counting objects:  52% (22/42)        remote: Counting objects:  54% (23/42)        remote: Counting objects:  57% (24/42)        remote: Counting objects:  59% (25/42)        remote: Counting objects:  61% (26/42)        remote: Counting objects:  64% (27/42)        remote: Counting objects:  66% (28/42)        remote: Counting objects:  69% (29/42)        remote: Counting objects:  71% (30/42)        remote: Counting objects:  73% (31/42)        remote: Counting objects:  76% (32/42)        remote: Counting objects:  78% (33/42)        remote: Counting objects:  80% (34/42)        remote: Counting objects:  83% (35/42)        remote: Counting objects:  85% (36/42)        remote: Counting objects:  88% (37/42)        remote: Counting objects:  90% (38/42)        remote: Counting objects:  92% (39/42)        remote: Counting objects:  95% (40/42)        remote: Counting objects:  97% (41/42)        remote: Counting objects: 100% (42/42)        remote: Counting objects: 100% (42/42), done.        
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | remote: Compressing objects:   2% (1/41)        remote: Compressing objects:   4% (2/41)        remote: Compressing objects:   7% (3/41)        remote: Compressing objects:   9% (4/41)        remote: Compressing objects:  12% (5/41)        remote: Compressing objects:  14% (6/41)        remote: Compressing objects:  17% (7/41)        remote: Compressing objects:  19% (8/41)        remote: Compressing objects:  21% (9/41)        remote: Compressing objects:  24% (10/41)        remote: Compressing objects:  26% (11/41)        remote: Compressing objects:  29% (12/41)        remote: Compressing objects:  31% (13/41)        remote: Compressing objects:  34% (14/41)        remote: Compressing objects:  36% (15/41)        remote: Compressing objects:  39% (16/41)        remote: Compressing objects:  41% (17/41)        remote: Compressing objects:  43% (18/41)        remote: Compressing objects:  46% (19/41)        remote: Compressing objects:  48% (20/41)        remote: Compressing objects:  51% (21/41)        remote: Compressing objects:  53% (22/41)        remote: Compressing objects:  56% (23/41)        remote: Compressing objects:  58% (24/41)        remote: Compressing objects:  60% (25/41)        remote: Compressing objects:  63% (26/41)        remote: Compressing objects:  65% (27/41)        remote: Compressing objects:  68% (28/41)        remote: Compressing objects:  70% (29/41)        remote: Compressing objects:  73% (30/41)        remote: Compressing objects:  75% (31/41)        remote: Compressing objects:  78% (32/41)        remote: Compressing objects:  80% (33/41)        remote: Compressing objects:  82% (34/41)        remote: Compressing objects:  85% (35/41)        remote: Compressing objects:  87% (36/41)        remote: Compressing objects:  90% (37/41)        remote: Compressing objects:  92% (38/41)        remote: Compressing objects:  95% (39/41)        remote: Compressing objects:  97% (40/41)        remote: Compressing objects: 100% (41/41)        remote: Compressing objects: 100% (41/41), done.        
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | remote: Total 42 (delta 4), reused 6 (delta 0), pack-reused 0        
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | From https://github.com/VKCOM/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   |  * [new branch]      master     -> origin/master
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Determining the checkout info
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::group::Checking out the ref
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Reset branch 'master'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | branch 'master' set up to track 'origin/master'.
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::branch 'master' set up to track 'origin/master'.%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::endgroup::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::commit 027c9ea9e1d743426a3e861855b746a71995c8d6%0AAuthor: Danil Ovchinnikov <danil42worker@gmail.com>%0ADate:   Mon Apr 24 14:28:41 2023 +0300%0A%0A    add polyfill for set_detect_incorrect_encoding_names_warning (#64)%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git log -1 --format='%H'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | '027c9ea9e1d743426a3e861855b746a71995c8d6'
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::'027c9ea9e1d743426a3e861855b746a71995c8d6'%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Unsetting HOME override
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❓  ::remove-matcher owner=checkout-git::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ✅  Success - Main Get polyfills repo
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ✅  Success - Main Cache docker image
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] ⭐ Run Post Get polyfills repo
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ⚙  ::set-output:: cache-hit=false
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] ⭐ Run Main Cache docker image
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] ⭐ Run Main Build and save docker image
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Getting git version
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git version
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | git version 2.40.0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::git version 2.40.0%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ⚙  ***
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Temporarily overriding HOME='/tmp/48898857-0d0c-4f23-97b9-a35195581b03' before making global git config changes
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | Adding repository directory to the temporary git global config as a safe directory
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::1
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | remote: Enumerating objects: 42, done.        
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | remote: Counting objects:   2% (1/42)        remote: Counting objects:   4% (2/42)        remote: Counting objects:   7% (3/42)        remote: Counting objects:   9% (4/42)        remote: Counting objects:  11% (5/42)        remote: Counting objects:  14% (6/42)        remote: Counting objects:  16% (7/42)        remote: Counting objects:  19% (8/42)        remote: Counting objects:  21% (9/42)        remote: Counting objects:  23% (10/42)        remote: Counting objects:  26% (11/42)        remote: Counting objects:  28% (12/42)        remote: Counting objects:  30% (13/42)        remote: Counting objects:  33% (14/42)        remote: Counting objects:  35% (15/42)        remote: Counting objects:  38% (16/42)        remote: Counting objects:  40% (17/42)        remote: Counting objects:  42% (18/42)        remote: Counting objects:  45% (19/42)        remote: Counting objects:  47% (20/42)        remote: Counting objects:  50% (21/42)        remote: Counting objects:  52% (22/42)        remote: Counting objects:  54% (23/42)        remote: Counting objects:  57% (24/42)        remote: Counting objects:  59% (25/42)        remote: Counting objects:  61% (26/42)        remote: Counting objects:  64% (27/42)        remote: Counting objects:  66% (28/42)        remote: Counting objects:  69% (29/42)        remote: Counting objects:  71% (30/42)        remote: Counting objects:  73% (31/42)        remote: Counting objects:  76% (32/42)        remote: Counting objects:  78% (33/42)        remote: Counting objects:  80% (34/42)        remote: Counting objects:  83% (35/42)        remote: Counting objects:  85% (36/42)        remote: Counting objects:  88% (37/42)        remote: Counting objects:  90% (38/42)        remote: Counting objects:  92% (39/42)        remote: Counting objects:  95% (40/42)        remote: Counting objects:  97% (41/42)        remote: Counting objects: 100% (42/42)        remote: Counting objects: 100% (42/42), done.        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | http.https://github.com/.extraheader
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::http.https://github.com/.extraheader%0A
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | remote: Compressing objects:   2% (1/41)        remote: Compressing objects:   4% (2/41)        remote: Compressing objects:   7% (3/41)        remote: Compressing objects:   9% (4/41)        remote: Compressing objects:  12% (5/41)        remote: Compressing objects:  14% (6/41)        remote: Compressing objects:  17% (7/41)        remote: Compressing objects:  19% (8/41)        remote: Compressing objects:  21% (9/41)        remote: Compressing objects:  24% (10/41)        remote: Compressing objects:  26% (11/41)        remote: Compressing objects:  29% (12/41)        remote: Compressing objects:  31% (13/41)        remote: Compressing objects:  34% (14/41)        remote: Compressing objects:  36% (15/41)        remote: Compressing objects:  39% (16/41)        remote: Compressing objects:  41% (17/41)        remote: Compressing objects:  43% (18/41)        remote: Compressing objects:  46% (19/41)        remote: Compressing objects:  48% (20/41)        remote: Compressing objects:  51% (21/41)        remote: Compressing objects:  53% (22/41)        remote: Compressing objects:  56% (23/41)        remote: Compressing objects:  58% (24/41)        remote: Compressing objects:  60% (25/41)        remote: Compressing objects:  63% (26/41)        remote: Compressing objects:  65% (27/41)        remote: Compressing objects:  68% (28/41)        remote: Compressing objects:  70% (29/41)        remote: Compressing objects:  73% (30/41)        remote: Compressing objects:  75% (31/41)        remote: Compressing objects:  78% (32/41)        remote: Compressing objects:  80% (33/41)        remote: Compressing objects:  82% (34/41)        remote: Compressing objects:  85% (35/41)        remote: Compressing objects:  87% (36/41)        remote: Compressing objects:  90% (37/41)        remote: Compressing objects:  92% (38/41)        remote: Compressing objects:  95% (39/41)        remote: Compressing objects:  97% (40/41)        remote: Compressing objects: 100% (41/41)        remote: Compressing objects: 100% (41/41), done.        
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::0
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   💬  ::debug::Unsetting HOME override
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2]   ✅  Success - Post Get polyfills repo
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #2 [internal] load build definition from Dockerfile.jammy
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #2 sha256:ddfde92d24cd3ee14c6e41be03c04a9fbd6ba3a678c6cca3f9e1a85ea8a35cdf
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #2 transferring dockerfile: 94B done
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #2 ERROR: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | 
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #1 [internal] load .dockerignore
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #1 sha256:1a20c8cfefa5686acce6516a59fba175f2579530614792863ca43efc113e49d3
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #1 transferring context: 2B done
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | #1 DONE 0.1s
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | ------
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   |  > [internal] load build definition from Dockerfile.jammy:
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | ------
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | failed to read dockerfile: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ❌  Failure - Main Build and save docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | remote: Total 42 (delta 4), reused 6 (delta 0), pack-reused 0        
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | From https://github.com/VKCOM/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   |  * [new branch]      master     -> origin/master
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Determining the checkout info
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::group::Checking out the ref
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Reset branch 'master'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | branch 'master' set up to track 'origin/master'.
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::branch 'master' set up to track 'origin/master'.%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::endgroup::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::commit 027c9ea9e1d743426a3e861855b746a71995c8d6%0AAuthor: Danil Ovchinnikov <danil42worker@gmail.com>%0ADate:   Mon Apr 24 14:28:41 2023 +0300%0A%0A    add polyfill for set_detect_incorrect_encoding_names_warning (#64)%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git log -1 --format='%H'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | '027c9ea9e1d743426a3e861855b746a71995c8d6'
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::'027c9ea9e1d743426a3e861855b746a71995c8d6'%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Unsetting HOME override
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❓  ::remove-matcher owner=checkout-git::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ✅  Success - Main Get polyfills repo
-[build/focalclang/clang++/c++17/asan=off/ubsan=on-2] 🏁  Job failed
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ✅  Success - Main Cache docker image
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] exitcode '1': failure
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ⚙  ::set-output:: cache-hit=false
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] ⭐ Run Main Cache docker image
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] ⭐ Run Main Build and save docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker cp src=/home/andreylzmw/.cache/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] ⭐ Run Post Get polyfills repo
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #2 [internal] load build definition from Dockerfile.buster
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #2 sha256:500ef7ff2e3cb9058ab6b944419d2e03dc925080283472b0c00e586364bf5b44
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #2 transferring dockerfile: 94B done
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #2 ERROR: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | 
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #1 [internal] load .dockerignore
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #1 sha256:e6883981b4ee5989ca374def58f26847595a1e425c085940943674d7fb2ab6d3
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #1 transferring context:
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | #1 CANCELED
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | ------
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   |  > [internal] load build definition from Dockerfile.buster:
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | ------
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | failed to read dockerfile: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ❌  Failure - Main Build and save docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Getting git version
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git version
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | git version 2.40.0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::git version 2.40.0%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ⚙  ***
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Temporarily overriding HOME='/tmp/384a0164-eb75-4fc7-8903-6f64b017554f' before making global git config changes
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::1
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | http.https://github.com/.extraheader
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::http.https://github.com/.extraheader%0A
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::0
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   💬  ::debug::Unsetting HOME override
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] exitcode '1': failure
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ]   ✅  Success - Post Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ✅  Success - Main Cache docker image
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ⚙  ::set-output:: cache-hit=false
-[build/jammy/g++/c++20/asan=on/ubsan=off-4         ] 🏁  Job failed
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] ⭐ Run Main Build and save docker image
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] ⭐ Run Post Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Getting git version
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git version
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | git version 2.40.0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::git version 2.40.0%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ⚙  ***
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #1 [internal] load build definition from Dockerfile.focalg
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #1 sha256:fb76023eb6fb81535d3ae8693cc51626bf342dac7c0b5678678c3535324026ce
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #1 transferring dockerfile: 94B done
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #1 ERROR: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | 
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #2 [internal] load .dockerignore
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #2 sha256:8fe40d727b951bd4462abbbbdc5bf9f81bb9cb9bafbf82ec8448917c1dab0a3e
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #2 transferring context:
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | #2 CANCELED
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | ------
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   |  > [internal] load build definition from Dockerfile.focalg:
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | ------
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | failed to read dockerfile: error from sender: resolve : lstat /home/andreylzmw/kphp/.github/workflows/.github: no such file or directory
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Temporarily overriding HOME='/tmp/eedfb369-7527-4695-a25e-b803be7cf671' before making global git config changes
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ❌  Failure - Main Build and save docker image
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::1
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | http.https://github.com/.extraheader
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::http.https://github.com/.extraheader%0A
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::0
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   💬  ::debug::Unsetting HOME override
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ]   ✅  Success - Post Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] exitcode '1': failure
-[build/buster/g++/c++17/asan=off/ubsan=off-1       ] 🏁  Job failed
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] ⭐ Run Post Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   🐳  docker exec cmd=[node /var/run/act/actions/actions-checkout@v3/dist/index.js] user= workdir=
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Getting git version
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git version
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | git version 2.40.0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::git version 2.40.0%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Set git useragent to: git/2.40.0 (github-actions-checkout)
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ⚙  ***
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Temporarily overriding HOME='/tmp/161ea92b-c4f4-476b-b5c4-80bbd5c98fbf' before making global git config changes
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | Adding repository directory to the temporary git global config as a safe directory
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --global --add safe.directory /home/andreylzmw/kphp/.github/workflows/kphp-polyfills
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::1
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | http.https://github.com/.extraheader
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::http.https://github.com/.extraheader%0A
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::0
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   💬  ::debug::Unsetting HOME override
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ]   ✅  Success - Post Get polyfills repo
-[build/focalg/g++-10/c++20/asan=on/ubsan=off-3     ] 🏁  Job failed
