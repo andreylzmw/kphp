@@ -283,6 +283,9 @@ void CompilerSettings::init() {
 
   remove_extra_spaces(extra_cxx_flags.value_);
   std::stringstream ss;
+  #ifdef MBFL
+  ss << " -DMBFL ";
+  #endif
   ss << extra_cxx_flags.get();
   ss << " -iquote" << kphp_src_path.get()
      << " -iquote " << kphp_src_path.get() << "objs/generated/auto/runtime";
@@ -329,6 +332,11 @@ void CompilerSettings::init() {
   // LDD may not find a library in /usr/local/lib if we don't add it here
   // TODO: can we avoid this hardcoded library path?
   ld_flags.value_ += " -L /usr/local/lib";
+#endif
+
+#ifdef LIBMBFL_LIB_DIR
+  external_static_libs.emplace_back("libmbfl");
+  ld_flags.value_ += " -L" LIBMBFL_LIB_DIR;
 #endif
 
 #if defined(__APPLE__) && defined(__arm64__)

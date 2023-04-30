@@ -1,8 +1,155 @@
-// Compiler for PHP (aka KPHP)
-// Copyright (c) 2020 LLC «V Kontakte»
-// Distributed under the GPL v3 License, see LICENSE.notice.txt
+#include "mbstring.h"
 
-#include "runtime/mbstring.h"
+bool mb_UTF8_check(const char *s) {
+  do {
+#define CHECK(condition) if (!(condition)) {return false;}
+    unsigned int a = (unsigned char)(*s++);
+    if ((a & 0x80) == 0) {
+      if (a == 0) {
+        return true;
+      }
+      continue;
+    }
+
+    CHECK ((a & 0x40) != 0);
+
+    unsigned int b = (unsigned char)(*s++);
+    CHECK((b & 0xc0) == 0x80);
+    if ((a & 0x20) == 0) {
+      CHECK((a & 0x1e) > 0);
+      continue;
+    }
+
+    unsigned int c = (unsigned char)(*s++);
+    CHECK((c & 0xc0) == 0x80);
+    if ((a & 0x10) == 0) {
+      int x = (((a & 0x0f) << 6) | (b & 0x20));
+      CHECK(x != 0 && x != 0x360);//surrogates
+      continue;
+    }
+
+    unsigned int d = (unsigned char)(*s++);
+    CHECK((d & 0xc0) == 0x80);
+    if ((a & 0x08) == 0) {
+      int t = (((a & 0x07) << 6) | (b & 0x30));
+      CHECK(0 < t && t < 0x110);//end of unicode
+      continue;
+    }
+
+    return false;
+#undef CHECK
+  } while (true);
+
+  php_assert (0);
+}
+
+#ifdef MBFL
+extern "C" {
+	#include <kphp/libmbfl/mbfl/mbfilter.h>
+}
+
+mbfl_string *convert_encoding(const char *str, const char *to, const char *from) {
+
+	int len = strlen(str);
+	enum mbfl_no_encoding from_encoding, to_encoding;
+	mbfl_buffer_converter *convd = NULL;
+	mbfl_string _string, result, *ret;
+
+	/* from internal to mbfl */
+	from_encoding = mbfl_name2no_encoding(from);
+	to_encoding = mbfl_name2no_encoding(to);
+
+	/* init buffer mbfl strings */
+	mbfl_string_init(&_string);
+	mbfl_string_init(&result);
+	_string.no_encoding = from_encoding;
+	_string.len = len;
+	_string.val = (unsigned char*)str;
+
+	/* converting */
+	convd = mbfl_buffer_converter_new(from_encoding, to_encoding, 0);
+	ret = mbfl_buffer_converter_feed_result(convd, &_string, &result);
+	mbfl_buffer_converter_delete(convd);
+
+	/* fix converting with multibyte encodings */
+	if (len % 2 != 0 && ret->len % 2 == 0 && len < ret->len) {
+		ret->len++;
+		ret->val[ret->len-1] = 63;
+	}
+	
+	return ret;
+}
+
+bool check_encoding(const char *value, const char *encoding) {
+
+	/* init buffer mbfl strins */
+	mbfl_string _string;
+	mbfl_string_init(&_string);
+	_string.val = (unsigned char*)value;
+	_string.len = strlen((char*)value);
+
+	/* from internal to mbfl */
+	const mbfl_encoding *enc = mbfl_name2encoding(encoding);
+
+	/* get all supported encodings */
+	const mbfl_encoding **encs = mbfl_get_supported_encodings();
+	int len = sizeof(**encs);
+
+	/* identify encoding of input string */
+	/* Warning! String can be represented in different encodings, so check needed */
+	const mbfl_encoding *i_enc = mbfl_identify_encoding2(&_string, encs, len, 1);
+
+	/* perform convering */
+	const char *i_enc_str = (const char*)convert_encoding(value, i_enc->name, enc->name)->val;
+	const char *enc_str = (const char*)convert_encoding(i_enc_str, enc->name, i_enc->name)->val;
+
+	/* check equality */
+	/* Warning! strcmp not working, because of different encodings */
+	bool res = true;
+	for (int i = 0; i < strlen(enc_str); i++)
+		if (enc_str[i] != value[i]) {
+			res = false;
+			break;
+		}
+
+	free((void*)i_enc_str);
+	free((void*)enc_str);
+	return res;
+}
+
+// TODO: check for array as value
+mixed f$mb_convert_encoding(const mixed &str, const string &to_encoding, const mixed &from_encoding) {
+
+	if (str.is_string() && from_encoding.is_string()) {
+		const string &s = str.to_string();
+		const string &from = from_encoding.to_string();
+
+		const char *c_string = s.c_str();
+		const char *c_to_encoding = to_encoding.c_str();
+		const char *c_from_encoding = from.c_str();
+
+		/* perform convertion */
+		mbfl_string *ret = convert_encoding(c_string, c_to_encoding, c_from_encoding);
+		string res = string((const char*)ret->val, ret->len);
+
+		/* check if string represents in from_encoding, magic number 63 - '?' in ASCII */
+		if (!check_encoding(c_string, c_from_encoding)) res = string(strlen(c_string), (char)63);
+
+		return res;
+	}
+	return 0;
+}
+
+// TODO: check for optional value
+bool f$mb_check_encoding(const mixed &value, const Optional<string> &encoding) {
+	const string &val = value.to_string();
+	const string &enc = encoding.val();
+	const char *c_value = val.c_str();
+	const char *c_encoding = enc.c_str();
+	return check_encoding(c_value, c_encoding);
+}
+
+#else
 
 #include "common/unicode/unicode-utils.h"
 #include "common/unicode/utf8-utils.h"
@@ -85,49 +232,6 @@ static int64_t mb_UTF8_get_offset(const char *s, int64_t pos) {
     }
   }
   return res;
-}
-
-bool mb_UTF8_check(const char *s) {
-  do {
-#define CHECK(condition) if (!(condition)) {return false;}
-    unsigned int a = (unsigned char)(*s++);
-    if ((a & 0x80) == 0) {
-      if (a == 0) {
-        return true;
-      }
-      continue;
-    }
-
-    CHECK ((a & 0x40) != 0);
-
-    unsigned int b = (unsigned char)(*s++);
-    CHECK((b & 0xc0) == 0x80);
-    if ((a & 0x20) == 0) {
-      CHECK((a & 0x1e) > 0);
-      continue;
-    }
-
-    unsigned int c = (unsigned char)(*s++);
-    CHECK((c & 0xc0) == 0x80);
-    if ((a & 0x10) == 0) {
-      int x = (((a & 0x0f) << 6) | (b & 0x20));
-      CHECK(x != 0 && x != 0x360);//surrogates
-      continue;
-    }
-
-    unsigned int d = (unsigned char)(*s++);
-    CHECK((d & 0xc0) == 0x80);
-    if ((a & 0x08) == 0) {
-      int t = (((a & 0x07) << 6) | (b & 0x30));
-      CHECK(0 < t && t < 0x110);//end of unicode
-      continue;
-    }
-
-    return false;
-#undef CHECK
-  } while (true);
-
-  php_assert (0);
 }
 
 bool f$mb_check_encoding(const string &str, const string &encoding) {
@@ -388,3 +492,5 @@ string f$mb_substr(const string &str, int64_t start, const mixed &length_var, co
 
   return {str.c_str() + UTF8_start, static_cast<string::size_type>(UTF8_length)};
 }
+
+#endif
