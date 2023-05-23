@@ -168,12 +168,26 @@ void PhpScript::init(script_t *script, php_query_data *data_to_set) noexcept {
 
   assert_state(run_state_t::before_init);
 
+  #if ASAN_ENABLED
+    __sanitizer_start_switch_fiber(nullptr, main_thread_stack, main_thread_stacksize);
+  #endif
   getcontext_portable(&run_context);
+  #if ASAN_ENABLED
+    __sanitizer_finish_switch_fiber(nullptr, &main_thread_stack, &main_thread_stacksize);
+  #endif
+  
   run_context.uc_stack.ss_sp = script_stack.get_stack_ptr();
   run_context.uc_stack.ss_size = script_stack.get_stack_size();
   run_context.uc_link = nullptr;
-  makecontext_portable(&run_context, &script_context_entrypoint, 0);
 
+  #if ASAN_ENABLED
+    __sanitizer_start_switch_fiber(nullptr, main_thread_stack, main_thread_stacksize);
+  #endif
+  makecontext_portable(&run_context, &script_context_entrypoint, 0);
+  #if ASAN_ENABLED
+    __sanitizer_finish_switch_fiber(nullptr, &main_thread_stack, &main_thread_stacksize);
+  #endif
+  
   run_main = script;
   data = data_to_set;
 
