@@ -13,15 +13,15 @@ env:
 
 jobs:
   build-linux:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
-          # - os: buster
-          #   compiler: g++
-          #   cpp: 17
-          #   asan: off
-          #   ubsan: off
+          - os: buster
+            compiler: g++
+            cpp: 17
+            asan: off
+            ubsan: off
           - os: focal
             compiler: clang++
             cpp: 17
