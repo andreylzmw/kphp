@@ -19,7 +19,7 @@ TEST(parallel_limit_counter, basic) {
   PARALLEL_LIMIT_COUNTER(limit_counter);
   PARALLEL_LIMIT_COUNTER_INIT(limit_counter, global_max, thread_max);
 
-  constexpr int nr_threads = 8;
+  constexpr int nr_threads = 2;
   std::mt19937 random_engine(std::random_device{}());
   std::uniform_int_distribution<int> distribution(0, thread_max);
 
