@@ -1,7 +1,7 @@
 from requests_toolbelt.utils import dump
 import requests
 import socket
-import urllib3.request
+from urllib3 import request
 
 from .colors import blue
 
