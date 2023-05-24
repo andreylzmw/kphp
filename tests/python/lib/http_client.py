@@ -34,7 +34,7 @@ def send_http_request(port, uri='/', method='GET', timeout=30, **kwargs):
     # print(*[i for i in dump.dump_all(r).splitlines(True)], sep="\n")
     # print("=============================")
     url = 'http://127.0.0.1:{}{}'.format(port, uri)
-    r = urlopen(Request(method=method, url=url))
+    r = urlopen(Request(method=method, url=url)).read().decode('utf-8')
     return r
 
 
