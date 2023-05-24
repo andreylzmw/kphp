@@ -1881,6 +1881,7 @@ int32_t ini_set_from_config(const char *config_file_name) {
     if (pos == std::string::npos) {
       return line_num;
     }
+    fprintf(stdout, "INI_SET: %s = %s", line.substr(0, pos), line.substr(pos + 1));
     ini_set(line.substr(0, pos), line.substr(pos + 1));
   }
   return 0;
@@ -1888,6 +1889,7 @@ int32_t ini_set_from_config(const char *config_file_name) {
 
 Optional<string> f$ini_get(const string &s) {
   if (ini_vars != nullptr && ini_vars->has_key(s)) {
+    fprintf(stdout, "INI_GET: %s", s.c_str());
     return ini_vars->get_value(s);
   }
 

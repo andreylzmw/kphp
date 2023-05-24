@@ -15,7 +15,7 @@ class TestStoreFetchDelete(KphpServerAutoTestCase):
 
             resp = self.kphp_server.http_post(
                 uri="/fetch_and_verify",
-                json={"key": "key{}".format(i)})
+                json={"key": f"key{i}"})
             self.assertEqual(resp.status_code, 200)
             self.assertEqual(resp.json(), {"a": True, "b": True, "c": True})
             
