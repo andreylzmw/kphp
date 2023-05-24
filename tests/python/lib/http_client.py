@@ -1,7 +1,7 @@
 from requests_toolbelt.utils import dump
 import requests
 import socket
-from urllib3 import request
+import urllib3
 
 from .colors import blue
 
@@ -26,11 +26,13 @@ class RawResponse:
 def send_http_request(port, uri='/', method='GET', timeout=30, **kwargs):
     url = 'http://127.0.0.1:{}{}'.format(port, uri)
     print("\nSending HTTP request: [{}]".format(blue(url)))
-    r = request(method=method, url=url, timeout=timeout, **kwargs)
-    print("HTTP request debug:")
-    print("=============================")
-    print(*[i for i in dump.dump_all(r).splitlines(True)], sep="\n")
-    print("=============================")
+    request = urllib3.request.Request(method=method, url=url, timeout=timeout, **kwargs)
+    opener = urllib3.request.build_opener()
+    r = opener.open(request)
+    # print("HTTP request debug:")
+    # print("=============================")
+    # print(*[i for i in dump.dump_all(r).splitlines(True)], sep="\n")
+    # print("=============================")
     return r
 
 
