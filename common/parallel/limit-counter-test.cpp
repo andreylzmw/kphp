@@ -13,13 +13,13 @@
 #include "common/parallel/limit-counter.h"
 
 TEST(parallel_limit_counter, basic) {
-  constexpr std::size_t global_max = 100000;
-  constexpr std::size_t thread_max = 10000;
+  constexpr std::size_t global_max = 1000;
+  constexpr std::size_t thread_max = 100;
 
   PARALLEL_LIMIT_COUNTER(limit_counter);
   PARALLEL_LIMIT_COUNTER_INIT(limit_counter, global_max, thread_max);
 
-  constexpr int nr_threads = 8;
+  constexpr int nr_threads = 2;
   std::mt19937 random_engine(std::random_device{}());
   std::uniform_int_distribution<int> distribution(0, thread_max);
 

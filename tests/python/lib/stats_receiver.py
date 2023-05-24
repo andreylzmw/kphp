@@ -63,8 +63,10 @@ class StatsReceiver:
 
     def try_update_stats(self):
         new_stats = {}
-        for stat_line in filter(None, self._stats_file_read_fd.readlines()):
+        lines = self._stats_file_read_fd.readlines()
+        for stat_line in filter(None, lines):
             if stat_line[-1] != "\n":
+                print(lines)
                 raise RuntimeError("Got bad stat line: {}".format(stat_line))
             stat, value = stat_line.split(":")
             value, _ = value.split("|")

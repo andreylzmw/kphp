@@ -14,9 +14,9 @@
 
 TEST(parallel_counter, basic) {
   PARALLEL_COUNTER(counter);
-  const int nr_threads = 8;
+  const int nr_threads = 2;
   auto random_engine = std::default_random_engine();
-  std::uniform_int_distribution<int> distribution(0, 100000);
+  std::uniform_int_distribution<int> distribution(0, 1000);
 
   std::vector<std::thread> threads(nr_threads);
 

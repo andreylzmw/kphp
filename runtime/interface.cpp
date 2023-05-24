@@ -53,6 +53,7 @@
 #include "runtime/udp.h"
 #include "runtime/url.h"
 #include "runtime/zlib.h"
+#include "server/cluster-name.h"
 #include "server/database-drivers/adaptor.h"
 #include "server/database-drivers/mysql/mysql.h"
 #include "server/database-drivers/pgsql/pgsql.h"
@@ -1836,6 +1837,10 @@ int64_t f$get_engine_workers_number() {
   return vk::singleton<WorkersControl>::get().get_total_workers_count();
 }
 
+string f$get_kphp_cluster_name() {
+  return string{vk::singleton<ClusterName>::get().get_cluster_name()};
+}
+
 std::tuple<int64_t, int64_t, int64_t, int64_t> f$get_webserver_stats() {
   const auto &stats = vk::singleton<SharedDataWorkerCache>::get().get_cached_worker_stats();
   return {stats.running_workers,  stats.waiting_workers, stats.ready_for_accept_workers, stats.total_workers};
@@ -1876,13 +1881,17 @@ int32_t ini_set_from_config(const char *config_file_name) {
     if (pos == std::string::npos) {
       return line_num;
     }
+    fprintf(stdout, "INI_SET: %s, %s = %s", config_file_name, 
+      string(line.substr(0, pos).data(), static_cast<string::size_type>(line.substr(0, pos).size())).c_str(),
+      string(line.substr(pos + 1).data(), static_cast<string::size_type>(line.substr(pos + 1).size())).c_str());
     ini_set(line.substr(0, pos), line.substr(pos + 1));
   }
   return 0;
 }
 
 Optional<string> f$ini_get(const string &s) {
-  if (ini_vars != nullptr && ini_vars->has_key(s)) {
+  fprintf(stdout, "INI_GET: %s, %d, %d", s.c_str(), ini_vars != nullptr, ini_vars->has_key(s));
+  if (ini_vars != nullptr && ini_vars->has_key(s)) { 
     return ini_vars->get_value(s);
   }
 
@@ -2379,6 +2388,7 @@ static void free_runtime_libs() {
   free_kphp_backtrace();
 
   free_migration_php8();
+  free_use_updated_gmmktime();
   free_detect_incorrect_encoding_names();
 
   vk::singleton<JsonLogger>::get().reset_buffers();

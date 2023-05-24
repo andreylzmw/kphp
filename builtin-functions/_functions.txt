@@ -204,6 +204,8 @@ function get_net_queries_count() ::: int;
 function get_engine_uptime() ::: int;
 function get_engine_version() ::: string;
 function get_engine_workers_number() ::: int;
+function get_kphp_cluster_name(): string;
+
 // get_webserver_stats returns a tuple of (running_workers, waiting_workers, ready_for_accept_workers, total_workers)
 function get_webserver_stats() ::: tuple(int, int, int, int);
 
@@ -1400,6 +1402,8 @@ function set_migration_php8_warning ($mask ::: int) ::: void;
 function set_detect_incorrect_encoding_names_warning(bool $show) ::: void;
 
 function set_json_log_on_timeout_mode(bool $enabled) ::: void;
+
+function set_use_updated_gmmktime(bool $enable) ::: void;
 
 // re-initialize given ArrayIterator with another array;
 // in KPHP it returns the same ArrayIterator that is ready to be used
