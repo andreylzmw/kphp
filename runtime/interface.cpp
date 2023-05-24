@@ -1890,8 +1890,8 @@ int32_t ini_set_from_config(const char *config_file_name) {
 }
 
 Optional<string> f$ini_get(const string &s) {
-  if (ini_vars != nullptr && ini_vars->has_key(s)) {
-    fprintf(stdout, "INI_GET: %s", s.c_str());
+  fprintf(stdout, "INI_GET: %s, %d, %d", s.c_str(), ini_vars != nullptr, ini_vars->has_key(s));
+  if (ini_vars != nullptr && ini_vars->has_key(s)) { 
     return ini_vars->get_value(s);
   }
 
