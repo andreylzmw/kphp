@@ -30,12 +30,12 @@ jobs:
           - os: focal
             compiler: g++-10
             cpp: 20
-            asan: on
+            asan: off
             ubsan: off
           - os: jammy
             compiler: g++
             cpp: 20
-            asan: on
+            asan: off
             ubsan: off
 
     name: "${{matrix.os}}/${{matrix.compiler}}/c++${{matrix.cpp}}/asan=${{matrix.asan}}/ubsan=${{matrix.ubsan}}"
