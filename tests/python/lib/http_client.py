@@ -26,7 +26,7 @@ class RawResponse:
 def send_http_request(port, uri='/', method='GET', timeout=30, **kwargs):
     url = 'http://127.0.0.1:{}{}'.format(port, uri)
     print("\nSending HTTP request: [{}]".format(blue(url)))
-    r = urllib3.request(method=method, url=url, timeout=timeout, **kwargs)
+    r = request(method=method, url=url, timeout=timeout, **kwargs)
     print("HTTP request debug:")
     print("=============================")
     print(*[i for i in dump.dump_all(r).splitlines(True)], sep="\n")
