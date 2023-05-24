@@ -1,7 +1,7 @@
 from requests_toolbelt.utils import dump
 import requests
 import socket
-from urllib3 import Timeout, Poolmanager
+from urllib.request import urlopen, Request
 
 from .colors import blue
 
@@ -34,9 +34,7 @@ def send_http_request(port, uri='/', method='GET', timeout=30, **kwargs):
     # print(*[i for i in dump.dump_all(r).splitlines(True)], sep="\n")
     # print("=============================")
     url = 'http://127.0.0.1:{}{}'.format(port, uri)
-    _timeout = Timeout(connect=timeout, read=timeout)
-    http = PoolManager(timeout=_timeout)
-    r = http.request(method, url)
+    r = urlopen(Request(method=method, url=url))
     return r
 
 
