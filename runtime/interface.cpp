@@ -53,6 +53,7 @@
 #include "runtime/udp.h"
 #include "runtime/url.h"
 #include "runtime/zlib.h"
+#include "server/cluster-name.h"
 #include "server/database-drivers/adaptor.h"
 #include "server/database-drivers/mysql/mysql.h"
 #include "server/database-drivers/pgsql/pgsql.h"
@@ -1836,6 +1837,10 @@ int64_t f$get_engine_workers_number() {
   return vk::singleton<WorkersControl>::get().get_total_workers_count();
 }
 
+string f$get_kphp_cluster_name() {
+  return string{vk::singleton<ClusterName>::get().get_cluster_name()};
+}
+
 std::tuple<int64_t, int64_t, int64_t, int64_t> f$get_webserver_stats() {
   const auto &stats = vk::singleton<SharedDataWorkerCache>::get().get_cached_worker_stats();
   return {stats.running_workers,  stats.waiting_workers, stats.ready_for_accept_workers, stats.total_workers};
@@ -2379,6 +2384,7 @@ static void free_runtime_libs() {
   free_kphp_backtrace();
 
   free_migration_php8();
+  free_use_updated_gmmktime();
   free_detect_incorrect_encoding_names();
 
   vk::singleton<JsonLogger>::get().reset_buffers();
